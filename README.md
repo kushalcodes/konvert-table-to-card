@@ -1,4 +1,6 @@
-Responsive table to card 
+> Converts table to card
+
+> see index.html for example
 
 ### Load from CDN
 

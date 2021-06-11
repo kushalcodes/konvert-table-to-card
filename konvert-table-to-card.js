@@ -2,7 +2,6 @@
 Convert table to card for responsivesness
 by @kushalcodes 
 */
-
 let TABLE_KONVERTER = {
   referenceTableIdOrClassName: '',
   referenceTableParentEl: null,
@@ -72,17 +71,22 @@ let TABLE_KONVERTER = {
     }
   },
 
+  insertAfter: function (referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  },
+
   generateCardElement: function () {
     for (let i = 0; i < this.tableCard.length; i++) {
       const cardObj = this.tableCard[i];
-      if (this.referenceTableParentEl) this.referenceTableParentEl.appendChild(this.generateCardSingle(cardObj));
+      const generatedCard = this.generateCardSingle(cardObj);
+      if (this.referenceTableParentEl) this.insertAfter(this.referenceTableParentEl, generatedCard);
     }
   },
 
   generateCardSingle: function (cardObj) {
     let card = document.createElement('div');
     card.className = 'card table-card';
-    card.style.width = "80%";
+    card.style.width = "100%";
     card.style.margin = "0 auto";
     card.style.marginBottom = "5px";
     card.style.marginTop = "5px";
@@ -152,7 +156,7 @@ let TABLE_KONVERTER = {
     }
   },
 
-  init: function (elementIdOrClassName){
+  init: function (elementIdOrClassName) {
     this.referenceTableIdOrClassName = elementIdOrClassName;
     this.konvert();
   }

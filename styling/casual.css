@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+.table-card{
+  width:95% !important;
+  margin:auto !important;
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 4px 8px #c4c4c4;
+}
+.table-card > .card-body {
+  font-family: 'Josefin Sans', sans-serif;
+  border-bottom: 1px solid #ebebeb;
+
+}

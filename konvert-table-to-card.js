@@ -175,7 +175,8 @@ let TABLE_KONVERTER = {
 
   stylingMap: {
     buddha: "buddha.css",
-    simple: "simple.css"
+    simple: "simple.css",
+    casual: "casual.css",
   },
 
   alreadyLoadedStyle: '',

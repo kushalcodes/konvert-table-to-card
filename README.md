@@ -31,6 +31,7 @@ TABLE_KONVERTER.init(".tableClassName")
 // styling list name
 > simple
 > buddha
+> casual
 ```
 #### Using these styles
 ```js

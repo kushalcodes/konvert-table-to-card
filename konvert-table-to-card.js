@@ -178,7 +178,10 @@ let TABLE_KONVERTER = {
     simple: "simple.css"
   },
 
+  alreadyLoadedStyle: '',
+
   loadStyling: function (name) {
+    if (this.alreadyLoadedStyle === name) return;
     let isNameValid = false, cssName = '';
     for (const key in this.stylingMap) {
       if (Object.hasOwnProperty.call(this.stylingMap, key)) {
@@ -196,6 +199,7 @@ let TABLE_KONVERTER = {
     }
 
     document.head.innerHTML += `<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kushalcodes/konvert-table-to-card@main/styling/${cssName}'/>`;
+    this.alreadyLoadedStyle = name;
   },
 
   options: {},

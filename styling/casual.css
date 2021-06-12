@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
 .table-card{
   margin-top: 10px !important;
   margin-bottom: 20px !important;
   box-shadow: 0 4px 8px #c4c4c4;
 }
 .table-card > .card-body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Source Serif Pro', serif;
   border-bottom: 1px solid #ebebeb;
+}
 
+.table-card > .card-body > .card-text {
+  box-shadow: 0 1px 2px #dadada;
+  padding:10px;
+  box-sizing: border-box;
+  color: #000000;
 }

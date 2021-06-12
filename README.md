@@ -15,7 +15,7 @@
 
 * id
 ```js
-TABLE_KONVERTER.init("#tableId"); // here konvertme is table id to convert to
+TABLE_KONVERTER.init("#tableId"); 
 ```
 * class
 ```js

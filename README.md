@@ -35,13 +35,9 @@ TABLE_KONVERTER.init(".tableClassName")
 #### Using these styles
 ```js
 TABLE_KONVERTER.init("#tableId",{
-  style: 'buddha'
+  style: 'buddha' // image below is how the buddha styling look like
 });
 ```
-
-### Styling Images
-> style: 'buddha'
-
 ![Style: 'buddha'](https://i.imgur.com/EJAa3pk.png)
 
 ### Dependencies

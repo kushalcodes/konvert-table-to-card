@@ -19,8 +19,11 @@ TABLE_KONVERTER.init("#tableId");
 ```
 * class
 ```js
-TABLE_KONVERTER.init(".tableClassName") // basically this will convert table elements initialization with css to have generated ids and use that id to convert using the id, so table mustnot have id
+TABLE_KONVERTER.init(".tableClassName") 
 ```
+ > Note: Do not add id on table with initialized class name
+ >
+ > css initializtion works by converting tables to have generated ids and use that id to TABLE_CONVERTER.init("#generatedId"), so do not add id to table which you want to convert, else it will throw error if so
 
 ### Styling
 > style the converted cards using prebuilt stylings

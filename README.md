@@ -1,7 +1,8 @@
-> Converts table to card
-
-> see index.html for example
-
+> * Convert table to card
+>
+> * see index.html for example
+> 
+> * converts table to card when viewport is <= 425px
 ### Load from CDN
 
 ```js

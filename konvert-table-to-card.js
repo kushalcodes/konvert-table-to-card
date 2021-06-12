@@ -97,7 +97,7 @@ let TABLE_KONVERTER = {
         let cardBody = document.createElement('div');
         cardBody.className = 'card-body';
         cardBody.innerHTML += "<h5 class='card-title'>" + keyReadable + "</h5>";
-        cardBody.innerHTML += "<p class='card-text'>" + value + "</p>";
+        cardBody.innerHTML += "<div class='card-text'>" + value + "</div>";
         card.appendChild(cardBody);
       }
     }
@@ -156,7 +156,34 @@ let TABLE_KONVERTER = {
     }
   },
 
-  init: function (elementIdOrClassName) {
+  stylingMap: {
+    buddha: "buddha.css"
+  },
+
+  loadStyling: function (name) {
+    let isNameValid = false, cssName = '';
+    for (const key in this.stylingMap) {
+      if (Object.hasOwnProperty.call(this.stylingMap, key)) {
+        if (key === name) {
+          cssName = this.stylingMap[key];
+          isNameValid = true;
+          break;
+        }
+      }
+    }
+    if (!isNameValid) {
+      console.warn('Invalid styling name. Following are valid stylings : ');
+      console.table(this.stylingMap);
+      return;
+    }
+
+    document.head.innerHTML += `<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kushalcodes/konvert-table-to-card@main/styling/${cssName}'/>`;
+  },
+
+  init: function (elementIdOrClassName, options) {
+
+    if (options && options.style) this.loadStyling(options.style);
+
     this.referenceTableIdOrClassName = elementIdOrClassName;
     this.konvert();
   }

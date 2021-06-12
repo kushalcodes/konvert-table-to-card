@@ -173,14 +173,13 @@ let TABLE_KONVERTER = {
     }
   },
 
+  /* <Styling> */
+  alreadyLoadedStyle: '',
   stylingMap: {
     buddha: "buddha.css",
     simple: "simple.css",
     casual: "casual.css",
   },
-
-  alreadyLoadedStyle: '',
-
   loadStyling: function (name) {
     if (this.alreadyLoadedStyle === name) return;
     let isNameValid = false, cssName = '';
@@ -202,11 +201,42 @@ let TABLE_KONVERTER = {
     document.head.innerHTML += `<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kushalcodes/konvert-table-to-card@main/styling/${cssName}'/>`;
     this.alreadyLoadedStyle = name;
   },
+  /* </Styling> */
+
+  /* <Styling types> */
+  typePrefix: "type.",
+  typeMap: {
+    autoAlign: 'auto-align.css'
+  },
+  alreadyLoadedStyleType: '',
+  loadStylingType: function (typeName) {
+    if (this.alreadyLoadedStyleType === typeName) return;
+    let isNameValid = false, cssName = '';
+    for (const key in this.typeMap) {
+      if (Object.hasOwnProperty.call(this.typeMap, key)) {
+        if (key === typeName) {
+          cssName = this.typePrefix + this.typeMap[key];
+          isNameValid = true;
+          break;
+        }
+      }
+    }
+    if (!isNameValid) {
+      console.warn('Invalid styling type. Following are valid stylings : ');
+      console.table(this.typeMap);
+      return;
+    }
+
+    document.head.innerHTML += `<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kushalcodes/konvert-table-to-card@main/styling/${cssName}'/>`;
+    this.alreadyLoadedStyleType = typeName;
+  },
+  /* </Styling types>  */
 
   options: {},
 
   init: function (elementIdOrClassName, options) {
     if (options) this.options = options;
+    if (options && options.type) this.loadStylingType(options.type);
     if (options && options.style) this.loadStyling(options.style);
 
     this.referenceTableIdOrClassName = elementIdOrClassName;

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
+.table-card {
+  font-family: 'Source Serif Pro', serif;
+  display:flex !important;
+  flex-direction: row;
+  overflow: auto;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 2px #dadada;
+  margin-bottom: 10px !important;
+}
+.table-card > .card-body{
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}

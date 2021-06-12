@@ -31,9 +31,14 @@ TABLE_KONVERTER.init(".tableClassName") // basically this will convert table ele
 #### Using these styles
 ```js
 TABLE_KONVERTER.init("#tableId",{
-  style: 'simple'
+  style: 'buddha'
 });
 ```
+
+### Styling Images
+> style: 'buddha'
+
+![Style: 'buddha'](https://i.imgur.com/EJAa3pk.png)
 
 ### Dependencies
 * Bootstrap

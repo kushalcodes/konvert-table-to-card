@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
-.table-card{
-  width:95% !important;
-  margin: auto;
-}
-
 .table-card > .card-body {
   font-family: 'Mate SC', serif;
   border-bottom: 1px solid #ebebeb;

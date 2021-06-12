@@ -54,7 +54,24 @@ let TABLE_KONVERTER = {
     // append card element to document
     this.generateCardElement();
   },
-  handleClass: function () { },
+  handleClass: function () {
+    const tableClass = this.referenceTableIdOrClassName.substring(1);
+    const tables = document.getElementsByClassName(tableClass);
+    for (let i = 0; i < tables.length; i++) {
+      const table = tables[i];
+      if (table.id && table.id.length > 0) {
+        console.error(`Id already exists for table: <table class='${table.className}'></table> 
+        \n You are using css initialization
+        \n We basically convert table elements initialization with cssm to have generated ids and use that id to convert using the id.
+        \n Hence its basically id initialization
+        `)
+        break;
+      }
+      const theId = 'konverted-table-' + i;
+      table.id = theId;
+      TABLE_KONVERTER.init("#" + theId, TABLE_KONVERTER.options);
+    }
+  },
 
   generateTableCard: function () {
     for (let i = 0; i < this.tableBodyTRs.length; i++) {
@@ -181,8 +198,10 @@ let TABLE_KONVERTER = {
     document.head.innerHTML += `<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kushalcodes/konvert-table-to-card@main/styling/${cssName}'/>`;
   },
 
-  init: function (elementIdOrClassName, options) {
+  options: {},
 
+  init: function (elementIdOrClassName, options) {
+    if (options) this.options = options;
     if (options && options.style) this.loadStyling(options.style);
 
     this.referenceTableIdOrClassName = elementIdOrClassName;

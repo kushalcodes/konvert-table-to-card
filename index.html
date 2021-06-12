@@ -11,7 +11,45 @@
 </head>
 
 <body>
-  <table class="display nowrap table table-hover table-striped table-bordered w-100 table-compact mb-0" id="konvertme">
+  <table class="display nowrap table table-hover table-striped table-bordered w-100 table-compact mb-0 test1">
+    <thead class="">
+      <th scope="col" class="paragraphText text-center">Action</th>
+      <th scope="col" class="paragraphText text-center theme-sort"><a href="#">ID</a></th>
+      <th scope="col" class="paragraphText text-center theme-sort"><a href="#">Photo</a></th>
+      <th scope="col" class="paragraphText text-center">Personal Information</th>
+      <th scope="col" class="paragraphText text-center theme-sort"><a href="#">Status</a></th>
+    </thead>
+    <tbody class="tbody-light">
+      <tr>
+        <td style="max-width: 100px;"><a class="btn-link link-underline text-underline" target="__blank"
+            href="#">Edit</a> <a class="btn-link link-underline text-underline" target="__blank" href="#">View</a></td>
+        <td>2</td>
+        <td>
+          <div><img class="img-fluid modal-image"
+              src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+              style="max-width: 100px;">
+          </div>
+        </td>
+        <td>member@gmail.com<br>Member<br>Member<br>12345678<br></td>
+        <td>Active</td>
+      </tr>
+      <tr>
+        <td style="max-width: 100px;"><a class="btn-link link-underline text-underline" target="__blank"
+            href="#">Edit</a> <a class="btn-link link-underline text-underline" target="__blank" href="#">View</a></td>
+        <td>1</td>
+        <td>
+          <div class="mkd-image-container"><img class="img-fluid modal-image"
+              src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+              style="max-width: 100px;">
+          </div>
+        </td>
+        <td>admin@gmail.com<br>Admin<br>Admin<br>12345678<br></td>
+        <td>Active</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="display nowrap table table-hover table-striped table-bordered w-100 table-compact mb-0 test1">
     <thead class="">
       <th scope="col" class="paragraphText text-center">Action</th>
       <th scope="col" class="paragraphText text-center theme-sort"><a href="#">ID</a></th>
@@ -52,7 +90,7 @@
   <script src="konvert-table-to-card.js"></script>
 
   <script>
-    TABLE_KONVERTER.init("#konvertme", {
+    TABLE_KONVERTER.init(".test1", {
       style: 'simple'
     });
   </script>

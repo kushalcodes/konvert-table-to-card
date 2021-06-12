@@ -1,5 +1,5 @@
 /* 
-Convert table to card for responsivesness
+Convert table to responsive cards
 by @kushalcodes 
 */
 let TABLE_KONVERTER = {

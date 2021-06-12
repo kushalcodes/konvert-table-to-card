@@ -25,21 +25,45 @@ TABLE_KONVERTER.init(".tableClassName")
  >
  > css initializtion works by converting tables to have generated ids and use that id to TABLE_CONVERTER.init("#generatedId"), so do not add id to table which you want to convert, else it will throw error if so
 
-### Styling
+### Options
+```js
+// options can be passed on second parameter as obj
+const options = {
+  style: 'styleName',
+  type: 'typeName'
+};
+TABLE_KONVERTER.init('#tableId', options);
+```
+### Style Option
 > style the converted cards using prebuilt stylings
 ```js
-// styling list name
+// styling names
 > simple
 > buddha
 > casual
 ```
-#### Using these styles
+
 ```js
 TABLE_KONVERTER.init("#tableId",{
   style: 'buddha' // image below is how the buddha styling look like
 });
 ```
-![Style: 'buddha'](https://i.imgur.com/EJAa3pk.png)
+![Style: 'buddha'](https://i.imgur.com/EJAa3pk.png?1)
+### Type Option
+```js
+// type names
+> autoAlign
+```
+```js
+// can also add type
+TABLE_KONVERTER.init("#tableId",{
+  style: 'casual',
+  type: 'autoAlign'
+});
+// above init will look something like this
+```
+  ![Style: 'buddha'](https://i.imgur.com/B5wMAAM.png)
+
 
 ### Dependencies
 * Bootstrap

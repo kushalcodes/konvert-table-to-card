@@ -113,9 +113,15 @@ let TABLE_KONVERTER = {
         let keyReadable = this.capitalize(key).replace('_', ' ');
         let cardBody = document.createElement('div');
         cardBody.className = 'card-body';
+        if (this.options.stickyHeader.tableHeadingName && keyReadable.toLowerCase() === this.options.stickyHeader.tableHeadingName.toLowerCase()) {
+          cardBody.className = 'card-body card-sticky';
+          cardBody.style.position = 'sticky';
+          cardBody.style.top = 0;
+        }
         cardBody.innerHTML += "<h5 class='card-title'>" + keyReadable + "</h5>";
         cardBody.innerHTML += "<div class='card-text'>" + value + "</div>";
         card.appendChild(cardBody);
+
       }
     }
     return card;

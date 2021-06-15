@@ -29,8 +29,11 @@ TABLE_KONVERTER.init(".tableClassName")
 ```js
 // options can be passed on second parameter as obj
 const options = {
-  style: 'styleName',
-  type: 'typeName'
+  style: 'styleName', // described on Style Option below
+  type: 'typeName', // described on Type Option below
+  stickyHeader: { // make card title sticky
+    tableHeadingName: 'Action' // title or heading of table's name
+  }
 };
 TABLE_KONVERTER.init('#tableId', options);
 ```

@@ -110,7 +110,7 @@ let TABLE_KONVERTER = {
     for (const key in cardObj) {
       if (Object.hasOwnProperty.call(cardObj, key)) {
         const value = cardObj[key];
-        let keyReadable = this.capitalize(key).replace('_', ' ');
+        let keyReadable = typeof key === 'string' ? this.capitalize(key).replace('_', ' ') : key;
         let cardBody = document.createElement('div');
         cardBody.className = 'card-body';
         if (this.options.stickyHeader && this.options.stickyHeader.tableHeadingName && keyReadable.toLowerCase() === this.options.stickyHeader.tableHeadingName.toLowerCase()) {

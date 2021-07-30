@@ -118,7 +118,7 @@ let TABLE_KONVERTER = {
           cardBody.style.position = 'sticky';
           cardBody.style.top = 0;
         }
-        cardBody.innerHTML += "<h5 class='card-title'>" + keyReadable + "</h5>";
+        cardBody.innerHTML += "<h5 class='card-title'>" + (keyReadable.toLowerCase() === 'id' ? 'ID' : keyReadable) + "</h5>";
         cardBody.innerHTML += "<div class='card-text'>" + value + "</div>";
         card.appendChild(cardBody);
 

@@ -3,6 +3,38 @@
 > * see index.html for example
 > 
 > * converts table to card when viewport is <= 425px
+
+### HTML Syntax
+
+```html
+<table>
+
+  <!-- table headings -->
+  <thead>
+
+    <!-- use th tags for headings -->
+    <th></th>
+
+  </thead>
+
+  <!-- table body -->
+  <tbody>
+
+    <!-- use tr tags for rows -->
+    <tr>
+      <!-- use td tags for columns -->
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+    </tr>
+
+  </tbody>
+
+</table>
+```
+
 ### Load from CDN
 
 ```js

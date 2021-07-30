@@ -80,7 +80,7 @@ let TABLE_KONVERTER = {
       let tempObj = {};
       for (let j = 0; j < bodyTds.length; j++) {
         const bodyTd = bodyTds[j];
-        const titleLowered = this.tableHeadingTitles[j].toLowerCase();
+        const titleLowered = this.tableHeadingTitles[j];
         const title = titleLowered.replace(' ', '_');
         tempObj[title] = bodyTd.innerHTML;
       }
@@ -118,10 +118,9 @@ let TABLE_KONVERTER = {
           cardBody.style.position = 'sticky';
           cardBody.style.top = 0;
         }
-        cardBody.innerHTML += "<h5 class='card-title'>" + (keyReadable.toLowerCase() === 'id' ? 'ID' : keyReadable) + "</h5>";
+        cardBody.innerHTML += "<h5 class='card-title'>" + keyReadable + "</h5>";
         cardBody.innerHTML += "<div class='card-text'>" + value + "</div>";
         card.appendChild(cardBody);
-
       }
     }
     return card;

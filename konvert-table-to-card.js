@@ -81,8 +81,13 @@ let TABLE_KONVERTER = {
       for (let j = 0; j < bodyTds.length; j++) {
         const bodyTd = bodyTds[j];
         const titleLowered = this.tableHeadingTitles[j];
-        const title = titleLowered.replace(' ', '_');
-        tempObj[title] = bodyTd.innerHTML;
+        let title = "";
+        if(typeof titleLowered === "string"){
+           title = titleLowered.replace(' ', '_');
+        }
+        tempObj[j] = {};
+        tempObj[j]["title"]  = title;
+        tempObj[j]["body"] = bodyTd.innerHTML;
       }
       this.tableCard.push(tempObj);
     }
@@ -107,10 +112,13 @@ let TABLE_KONVERTER = {
     card.style.margin = "0 auto";
     card.style.marginBottom = "5px";
     card.style.marginTop = "5px";
-    for (const key in cardObj) {
-      if (Object.hasOwnProperty.call(cardObj, key)) {
-        const value = cardObj[key];
-        let keyReadable = (typeof key === 'string') ? this.capitalize(key).replace('_', ' ') : key;
+    for(const i in cardObj) {
+      // for (const key in cardObj[i]) {
+      // if (Object.hasOwnProperty.call(cardObj[i], key)) {
+        const value = cardObj[i]["body"];
+
+        let keyReadable = (typeof cardObj[i]["title"] === 'string') ? this.capitalize(cardObj[i]["title"]).replace('_', ' ') : cardObj[i]["title"];
+
         let cardBody = document.createElement('div');
         cardBody.className = 'card-body';
         if (this.options.stickyHeader && this.options.stickyHeader.tableHeadingName && keyReadable.toLowerCase() === this.options.stickyHeader.tableHeadingName.toLowerCase()) {
@@ -118,11 +126,14 @@ let TABLE_KONVERTER = {
           cardBody.style.position = 'sticky';
           cardBody.style.top = 0;
         }
-        cardBody.innerHTML += "<h5 class='card-title'>" + keyReadable + "</h5>";
+        if(keyReadable.replace(" ", "").length > 0) {
+          cardBody.innerHTML += "<h5 class='card-title'>" + keyReadable + "</h5>";
+        }
         cardBody.innerHTML += "<div class='card-text'>" + value + "</div>";
         card.appendChild(cardBody);
-      }
-    }
+      // }
+    // }
+  }
     return card;
   },
 
